@@ -1,27 +1,48 @@
 <!DOCTYPE html>
 <html lang="en">
+<%- include("./partials/head.ejs") %>
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Animals</title>
-</head>
+  <style>
+    body {
+      background-color: darkslateblue;
+      color: lightgreen;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin-top: 12em;
+      margin-left: 24em;
+    }
 
-<body>
-  <h1>Create a New Animal</h1>
-  <form method="POST" action="/animals">
-    Name: <input type="text" name="name" />
-    <br />
-    Habitat: <input type="text" name="habitat" />
-    <br />
-    Life Expectancy: <input type="number" name="lifeExpectancy" />
-    <br />
-    Carnivore?: <input type="checkbox" name="carnivore" />
-    <br />
-    <input type="submit" name="" value="Add Animal" />
-  </form>
-  <a href="/animals">Back to the list of animals</a>
+    a:link {
+      color: lawngreen;
+    }
 
-</body>
+    a:visited {
+      color: darkseagreen;
+    }
+
+    a:hover {
+      color: greenyellow;
+    }
+
+    a:active {
+      color: lightgreen;
+    }
+  </style>
+
+  <body>
+    <h1>Create a New Animal</h1>
+    <form method="POST" action="/animals">
+      Name: <input type="text" name="name" />
+      <br />
+      Habitat: <input type="text" name="habitat" />
+      <br />
+      Life Expectancy: <input type="number" name="lifeExpectancy" />
+      <br />
+      Carnivore: <input type="checkbox" name="carnivore" />
+      <br />
+      <input type="submit" name="" value="Add Animal" />
+    </form>
+    <a href="/animals">Back to the list of animals</a>
+
+  </body>
 
 </html>

@@ -1,24 +1,56 @@
 <!DOCTYPE html>
 <html lang="en">
+<%- include("./partials/head.ejs") %>
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Animals</title>
-</head>
+  <style>
+    body {
+      background-color: darkslateblue;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      font-size: x-large;
+      margin-top: 6em;
+      margin-left: 24em;
+    }
 
-<body>
-  <h1>Animals</h1>
-  <ul>
-    <% animals.forEach(animal=> { %>
-      <li>
-        <a href="/animals/<%= animal._id %>">
-          <%= animal.name %>
-        </a>
-      </li>
-      <% }) %>
-  </ul>
-  <a href="/animals/new">Add an animal</a>
-</body>
+    ul {
+      list-style-type: disc;
+    }
+
+    h1 {
+      color: lightgreen;
+    }
+
+    a:link {
+      color: lawngreen;
+    }
+
+    a:visited {
+      color: darkseagreen;
+    }
+
+    a:hover {
+      color: greenyellow;
+    }
+
+    a:active {
+      color: lightgreen;
+    }
+  </style>
+
+  <div class="main">
+
+    <body>
+      <h1>Animals</h1>
+      <ul>
+        <% animals.forEach(animal=> { %>
+          <li>
+            <a href="/animals/<%= animal._id %>">
+              <%= animal.name %>
+            </a>
+          </li>
+          <% }) %>
+      </ul>
+      <a href="/animals/new">Add an animal</a>
+    </body>
+  </div>
 
 </html>

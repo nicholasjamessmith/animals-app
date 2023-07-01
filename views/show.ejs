@@ -1,31 +1,54 @@
 <!DOCTYPE html>
 <html lang="en">
+<%- include("./partials/head.ejs") %>
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Animals</title>
-</head>
+  <style>
+    body {
+      background-color: darkslateblue;
+      color: lightgreen;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin-top: 12em;
+      margin-left: 24em;
+    }
 
-<body>
-  <a href="/animals">Back to the list of animals</a>
-  <h1>
-    <%= animal.name %>
-  </h1>
-  <p>Habitat: <%= animal.habitat %>
-  </p>
-  <p>
-  </p>Life Expectancy: <%= animal.lifeExpectancy %>
-    <p>Carnivore?: <%= animal.carnivore %>
+    a:link {
+      color: lawngreen;
+    }
+
+    a:visited {
+      color: darkseagreen;
+    }
+
+    a:hover {
+      color: greenyellow;
+    }
+
+    a:active {
+      color: lightgreen;
+    }
+  </style>
+
+
+  <body>
+    <h1>
+      <%= animal.name %>
+    </h1>
+    <p>Habitat: <%= animal.habitat %>
     </p>
-    <form method="POST" action="/animals/<%= animal._id %>?_method=DELETE">
-      <input type="submit" value="delete animal" />
-    </form>
+    <p>
+    </p>Life Expectancy: <%= animal.lifeExpectancy %>
+      <p>Carnivore: <%= animal.carnivore %>
+      </p>
+      <a href="/animals/<%= animal._id %>/edit">
+        <button>Edit Animal</button>
+      </a>
+      <form method="POST" action="/animals/<%= animal._id %>?_method=DELETE">
+        <input type="submit" value="Delete Animal" />
+      </form>
 
-    <a href="/animals/<%= animal._id %>/edit">
-      <button>Edit</button>
-    </a>
 
-</body>
+      <br />
+      <a href="/animals">Back to the list of animals</a>
+  </body>
 
 </html>
