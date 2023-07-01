@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Animals</title>
+</head>
+
+<body>
+  <h1>Animals</h1>
+  <ul>
+    <% animals.forEach(animal=> { %>
+      <li>
+        <a href="/animals/<%= animal._id %>">
+          <%= animal.name %>
+        </a>
+      </li>
+      <% }) %>
+  </ul>
+  <a href="/animals/new">Add an animal</a>
+</body>
+
+</html>
